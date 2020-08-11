@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 13:07:56 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/11 18:12:31 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/11 20:46:50 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,31 @@ void	Phonebook::searching(void)
 	std::string	search_idx;
 	int			s_idx;
 	
-	std::getline(std::cin, search_idx);
-	if (std::cin.eof())
-	{
-		std::cin.clear();
-		exit(0);
-	}
-	s_idx = std::stoi(search_idx);
-	if (s_idx < 0 || s_idx > 7 || s_idx > this->cnt - 2)
-	{
-		std::cout << "there's no such index" << std::endl;
+	if (this->cnt == 0)
 		return ;
+	while (1)
+	{
+		std::getline(std::cin, search_idx);
+		if (std::cin.eof())
+		{
+			std::cin.clear();
+			exit(0);
+		}
+		if (search_idx[0] - '0' < 0 || search_idx[0] - '0' > this->cnt - 1)
+			std::cout << "there's no such index" << std::endl;
+		else
+		{
+			s_idx = std::stoi(search_idx);
+			if (s_idx < 0 || s_idx > 7 || s_idx > this->cnt - 1)
+				std::cout << "there's no such index" << std::endl;
+			else
+			{
+				std::cout << "INDEX : " << s_idx << std::endl;
+				this->contact[s_idx].print_all();
+				break ;
+			}
+		}
 	}
-	this->contact[s_idx].print_all();
 
 }
 

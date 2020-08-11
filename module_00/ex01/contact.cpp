@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 11:58:31 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/11 18:20:30 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/11 20:49:14 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ void	Contact::get_inputs(void)
 	{
 		std::cout << this->fields[i] << " : ";
 		std::getline(std::cin, inputs[i]);
+		if (std::cin.eof())
+		{
+			std::cin.clear();
+			exit(0);
+		}
 	}
 }
 
