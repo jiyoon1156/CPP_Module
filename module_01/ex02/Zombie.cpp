@@ -6,11 +6,11 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 13:37:36 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/12 16:35:14 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/13 10:43:55 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zomebie.hpp"
+#include "Zombie.hpp"
 
 Zombie::Zombie(std::string name, std::string type)
 {

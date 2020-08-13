@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 13:54:28 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/12 17:19:59 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/13 10:50:02 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-#include "Zomebie.hpp"
+#include "Zombie.hpp"
 
 class	ZombieEvent
 {
