@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/13 16:23:13 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/13 19:40:24 by jhur             ###   ########.fr       */
+/*   Created: 2020/08/15 14:51:15 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/15 16:44:56 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
+#include "Weapon.hpp"
 
-int	main(void)
+class HumanB
 {
-	std::string str;
-	std::string *ptr;
-	
-	//포인터는 주소를 가지고 있고 레퍼런스(참조)는 값을 가리키고 있다. 별명 같다고 생각.
-	str = "HI THIS IS BRAIN";
-	ptr = &str;
-	std::cout << *ptr << std::endl;
-	std::string &ref = str;
-	std::cout << ref << std::endl;
-}
+	private:
+		Weapon *_weapon;
+		std::string _name;
+	public:
+		HumanB(std::string name);
+		void	attack(void);
+		void	setWeapon(Weapon &club);
+		~HumanB();
+};
+
+#endif

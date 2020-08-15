@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/13 16:23:13 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/13 19:40:24 by jhur             ###   ########.fr       */
+/*   Created: 2020/08/15 14:51:12 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/15 16:45:08 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "HumanB.hpp"
 
-int	main(void)
+HumanB::HumanB(std::string name)
 {
-	std::string str;
-	std::string *ptr;
-	
-	//포인터는 주소를 가지고 있고 레퍼런스(참조)는 값을 가리키고 있다. 별명 같다고 생각.
-	str = "HI THIS IS BRAIN";
-	ptr = &str;
-	std::cout << *ptr << std::endl;
-	std::string &ref = str;
-	std::cout << ref << std::endl;
+	this->_name = name;
+}
+
+HumanB::~HumanB()
+{}
+
+void	HumanB::attack(void)
+{
+	std::cout << this->_name << " attacks with his " <<  this->_weapon->getType() << std::endl;
+}
+
+void	HumanB::setWeapon(Weapon &club)
+{
+	this->_weapon = &club;
 }
