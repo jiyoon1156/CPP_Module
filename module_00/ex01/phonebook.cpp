@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 13:07:56 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/11 20:46:50 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/19 20:43:45 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 Phonebook::Phonebook() : cnt(0)
 {}
@@ -22,7 +22,7 @@ void	Phonebook::searching(void)
 {
 	std::string	search_idx;
 	int			s_idx;
-	
+
 	if (this->cnt == 0)
 		return ;
 	while (1)
