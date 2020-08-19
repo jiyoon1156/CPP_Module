@@ -6,10 +6,12 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 11:25:03 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/12 11:51:20 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/19 20:55:24 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PONY_HPP
+# define PONY_HPP
 # include <iostream>
 # include <string>
 
@@ -28,3 +30,5 @@ class	Pony
 		std::string	getNickName(void);
 		~Pony();
 };
+
+#endif
