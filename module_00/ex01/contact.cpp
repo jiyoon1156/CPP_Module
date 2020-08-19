@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/11 11:58:31 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/19 20:43:18 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/19 22:43:20 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,14 @@ void	Contact::get_inputs(void)
 			std::cin.clear();
 			exit(0);
 		}
+		inputs_backup[i] = inputs[i];
 	}
 }
 
 void	Contact::print_all(void)
 {
 	for(int i = 0; i < 11; i++)
-		std::cout << this->fields[i] << " : " << this->inputs[i] << std::endl;
+		std::cout << this->fields[i] << " : " << this->inputs_backup[i] << std::endl;
 }
 
 void	Contact::print_overview(int i)
