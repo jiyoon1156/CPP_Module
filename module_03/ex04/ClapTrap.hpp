@@ -1,0 +1,61 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/20 13:56:11 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/20 15:10:01 by jhur             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
+
+#include <iostream>
+#include <string>
+
+class	ClapTrap
+{
+	private:
+		unsigned int	HitPoints;
+		unsigned int	MaxHitPoints;
+		unsigned int	EnergyPoints;
+		unsigned int	MaxEnergyPoints;
+		unsigned int	Level;
+		std::string		Name;
+		unsigned int	MeleeAttackDamage;
+		unsigned int	RangedAttackDamage;
+		unsigned int	GunAttackDamage;
+		unsigned int	CarAttackDamage;
+		unsigned int	BombAttackDamage;
+		unsigned int	ArmorDamageReduction;
+	public:
+		// ClapTrap();
+		ClapTrap(unsigned int	HitPoints,
+				unsigned int	MaxHitPoints,
+				unsigned int	EnergyPoints,
+				unsigned int	MaxEnergyPoints,
+				unsigned int	Level,
+				std::string		Name,
+				unsigned int	MeleeAttackDamage,
+				unsigned int	RangedAttackDamage,
+				unsigned int	GunAttackDamage,
+				unsigned int	CarAttackDamage,
+				unsigned int	BombAttackDamage,
+				unsigned int	ArmorDamageReduction);
+		void			RangedAttack(std::string const &target);
+		void			MeleeAttack(std::string const &target);
+		void			GunAttack(std::string const &target);
+		void			CarAttack(std::string const &target);
+		void			BombAttack(std::string const &target);
+		void			TakeDamage(unsigned int amount);
+		void			BeRepaired(unsigned int amount);
+		unsigned int	getEnergy(void);
+		void			decreaseEnergy(void);
+		std::string		getName(void);
+		~ClapTrap();
+};
+
+#endif
