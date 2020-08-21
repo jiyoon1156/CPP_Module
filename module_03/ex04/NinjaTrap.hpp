@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 14:58:41 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/20 15:07:19 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/21 10:42:41 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
 	public:
+		NinjaTrap();
 		NinjaTrap(std::string name);
+		NinjaTrap(const NinjaTrap &copy);
+		NinjaTrap &operator=(const NinjaTrap &ref);
 		void	ninjaShoebox(NinjaTrap &target);
 		void	ninjaShoebox(FragTrap &target);
 		void	ninjaShoebox(ScavTrap &target);

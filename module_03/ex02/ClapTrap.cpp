@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 13:56:08 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/21 10:41:28 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/21 10:41:44 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,11 +145,6 @@ void ClapTrap::copy(ClapTrap const &ref)
 	this->CarAttackDamage = ref.CarAttackDamage;
 	this->BombAttackDamage = ref.BombAttackDamage;
 	this->ArmorDamageReduction = ref.ArmorDamageReduction;
-}
-
-std::string		ClapTrap::getName(void)
-{
-	return (this->Name);
 }
 
 ClapTrap::~ClapTrap()

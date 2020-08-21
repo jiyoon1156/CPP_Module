@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 15:28:37 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/20 17:47:32 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/21 10:54:14 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 class	SuperTrap : public FragTrap, public NinjaTrap
 {
 	public:
+		SuperTrap();
 		SuperTrap(std::string name);
 		void	rangedAttack(std::string const &target);
 		void	meleeAttack(std::string const &target);

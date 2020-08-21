@@ -1,48 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/20 13:56:08 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/21 10:41:28 by jhur             ###   ########.fr       */
+/*   Created: 2020/08/20 13:28:51 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/21 09:53:42 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-ClapTrap::ClapTrap()
+ScavTrap::ScavTrap()
 {
-	std::cout << "Default claptrap constructor called" << std::endl;
+	std::cout << "Default ScavTrap constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(unsigned int	HitP,
-				unsigned int	MaxHitP,
-				unsigned int	EP,
-				unsigned int	MaxEP,
-				unsigned int	lv,
-				std::string		name,
-				unsigned int	MADamage,
-				unsigned int	RADamage,
-				unsigned int	GADamage,
-				unsigned int	CADamage,
-				unsigned int	BADamage,
-				unsigned int	ADReduction)
-: HitPoints(HitP), MaxHitPoints(MaxHitP), EnergyPoints(EP), MaxEnergyPoints(MaxEP),
-Level(lv), Name(name), MeleeAttackDamage(MADamage), RangedAttackDamage(RADamage),
-GunAttackDamage(GADamage), CarAttackDamage(CADamage), BombAttackDamage(BADamage), ArmorDamageReduction(ADReduction)
+ScavTrap::ScavTrap(std::string name)
 {
-	std::cout << "Claptrap constructor called" << std::endl;
+	this->HitPoints = 100;
+	this->MaxHitPoints = 100;
+	this->EnergyPoints = 50;
+	this->MaxEnergyPoints = 50;
+	this->Level = 1;
+	this->Name = name;
+	this->MeleeAttackDamage = 20;
+	this->RangedAttackDamage = 15;
+	this->GunAttackDamage = 40;
+	this->CarAttackDamage = 50;
+	this->BombAttackDamage = 60;
+	this->ArmorDamageReduction = 3;
+	std::cout << "ScavTrap constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &copy)
+ScavTrap::ScavTrap(const ScavTrap &copy)
 {
-	std::cout << "A copy constructor of ClapTrap is called." << std::endl;
+	std::cout << "A copy constructor of ScavTrap is called." << std::endl;
 	*this = copy;
 }
 
-ClapTrap	&ClapTrap::operator=(const ClapTrap &ref)
+ScavTrap	&ScavTrap::operator=(const ScavTrap &ref)
 {
 	this->HitPoints = ref.HitPoints;
 	this->MaxHitPoints = ref.MaxHitPoints;
@@ -59,37 +57,37 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &ref)
 	return (*this);
 }
 
-void	ClapTrap::RangedAttack(std::string const &target)
+void	ScavTrap::RangedAttack(std::string const &target)
 {
 	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " at range, causing "
 	<< this->RangedAttackDamage << " points of damage !" << std::endl;
 }
 
-void	ClapTrap::MeleeAttack(std::string const &target)
+void	ScavTrap::MeleeAttack(std::string const &target)
 {
 	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " at melee, causing "
 	<< this->MeleeAttackDamage << " points of damage !" << std::endl;
 }
 
-void	ClapTrap::GunAttack(std::string const &target)
+void	ScavTrap::GunAttack(std::string const &target)
 {
 	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " by gun, causing "
 	<< this->GunAttackDamage << " points of damage !" << std::endl;
 }
 
-void	ClapTrap::CarAttack(std::string const &target)
+void	ScavTrap::CarAttack(std::string const &target)
 {
 	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " by car, causing "
 	<< this->CarAttackDamage << " points of damage !" << std::endl;
 }
 
-void	ClapTrap::BombAttack(std::string const &target)
+void	ScavTrap::BombAttack(std::string const &target)
 {
 	std::cout << "FR4G-TP " << this->Name << " attacks " << target << " by bomb, causing "
 	<< this->BombAttackDamage << " points of damage !" << std::endl;
 }
 
-void	ClapTrap::TakeDamage(unsigned int amount)
+void	ScavTrap::TakeDamage(unsigned int amount)
 {
 	if (this->EnergyPoints == 0)
 	{
@@ -110,7 +108,7 @@ void	ClapTrap::TakeDamage(unsigned int amount)
 
 }
 
-void	ClapTrap::BeRepaired(unsigned int amount)
+void	ScavTrap::BeRepaired(unsigned int amount)
 {
 	if	((this->EnergyPoints + amount) <= this->MaxEnergyPoints)
 	{
@@ -121,38 +119,25 @@ void	ClapTrap::BeRepaired(unsigned int amount)
 		this->EnergyPoints = this->MaxEnergyPoints;
 }
 
-unsigned int	ClapTrap::getEnergy(void)
+void	ScavTrap::challengeNewcomer(std::string const &target)
 {
-	return (this->EnergyPoints);
+	int					i;
+	std::random_device	rd;
+
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<int> dis(0, 3);
+	i = dis(gen);
+	std::string challenge[4] =
+	{
+		"rock scissor paper",
+		"don't laugh for 2 minutes",
+		"writing poem",
+		"read 1 book in an hour"
+	};
+	std::cout << target << " accepted " << challenge[i] << " challenge" << std::endl;
 }
 
-void			ClapTrap::decreaseEnergy(void)
+ScavTrap::~ScavTrap()
 {
-	this->EnergyPoints -= 25;
-}
-
-void ClapTrap::copy(ClapTrap const &ref)
-{
-	this->HitPoints = ref.HitPoints;
-	this->MaxHitPoints = ref.MaxHitPoints;
-	this->EnergyPoints = ref.EnergyPoints;
-	this->MaxEnergyPoints = ref.MaxEnergyPoints;
-	this->Level = ref.Level;
-	this->Name = ref.Name;
-	this->MeleeAttackDamage = ref.MeleeAttackDamage;
-	this->RangedAttackDamage = ref.RangedAttackDamage;
-	this->GunAttackDamage = ref.GunAttackDamage;
-	this->CarAttackDamage = ref.CarAttackDamage;
-	this->BombAttackDamage = ref.BombAttackDamage;
-	this->ArmorDamageReduction = ref.ArmorDamageReduction;
-}
-
-std::string		ClapTrap::getName(void)
-{
-	return (this->Name);
-}
-
-ClapTrap::~ClapTrap()
-{
-	std::cout << "Claptrap destructor called" << std::endl;
+	std::cout << "ScavTrap destructor called" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 13:56:11 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/21 10:39:36 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/21 10:34:49 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ class	ClapTrap
 		unsigned int	getEnergy(void);
 		void			decreaseEnergy(void);
 		void			copy(const ClapTrap &ref);
-		std::string		getName(void);
 		~ClapTrap();
 };
 

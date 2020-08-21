@@ -6,31 +6,31 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 09:47:06 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/21 10:53:14 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/20 13:09:34 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "NinjaTrap.hpp"
 #include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include "SuperTrap.hpp"
 
 int main()
 {
-	std::cout << "===============Ninja Constructor================" << std::endl;
-	SuperTrap c("S");
-	std::cout << "===============Take Damege================" << std::endl;
-	c.TakeDamage(30);
-	c.TakeDamage(30);
-	c.TakeDamage(30);
-	c.TakeDamage(30);
-	c.TakeDamage(30);
-	c.TakeDamage(30);
+	std::cout << "===============FragTrap================" << std::endl;
+	FragTrap a("FRAGTRAP!");
+	std::cout << "===============Take Damage================" << std::endl;
+	a.TakeDamage(30);
+	a.TakeDamage(30);
+	a.TakeDamage(30);
+	a.TakeDamage(30);
+	a.TakeDamage(30);
+	a.TakeDamage(30);
 	std::cout << "===============Be Repaired================" << std::endl;
-	c.BeRepaired(20);
-	c.BeRepaired(20);
-	c.BeRepaired(20);
-	std::cout << "===============SUPERSUPER!================" << std::endl;
-	c.vaulthunter_dot_exe("someone3");
-	std::cout << "===============Destructor================" << std::endl;
+	a.BeRepaired(20);
+	a.BeRepaired(20);
+	a.BeRepaired(20);
+	std::cout << "===============VaultHunter================" << std::endl;
+	a.vaulthunter_dot_exe("someone");
+	a.vaulthunter_dot_exe("someone");
+	a.vaulthunter_dot_exe("someone");
+	a.vaulthunter_dot_exe("someone");
+	a.TakeDamage(130);
 }
