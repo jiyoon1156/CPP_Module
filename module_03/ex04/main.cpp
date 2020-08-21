@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 09:47:06 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/21 10:53:14 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/21 13:23:09 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 int main()
 {
-	std::cout << "===============Ninja Constructor================" << std::endl;
+	std::cout << "===============Constructor================" << std::endl;
 	SuperTrap c("S");
-	std::cout << "===============Take Damege================" << std::endl;
+	std::cout << "===============Take Damage================" << std::endl;
 	c.TakeDamage(30);
 	c.TakeDamage(30);
 	c.TakeDamage(30);

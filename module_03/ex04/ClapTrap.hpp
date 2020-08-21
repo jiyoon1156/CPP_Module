@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/20 13:56:11 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/21 10:39:36 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/21 13:30:40 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class	ClapTrap
 {
-	private:
+	protected:
 		unsigned int	HitPoints;
 		unsigned int	MaxHitPoints;
 		unsigned int	EnergyPoints;
