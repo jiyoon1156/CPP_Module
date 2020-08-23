@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.cpp                                           :+:      :+:    :+:   */
+/*   SuperMutant.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/23 14:11:31 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/23 15:07:45 by jhur             ###   ########.fr       */
+/*   Created: 2020/08/23 16:29:20 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/23 18:47:11 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "SuperMutant.hpp"
 
-Peon::Peon()
-{}
-
-Peon::Peon(std::string name) : Victim(name)
+SuperMutant::SuperMutant()
+: Enemy(170, "Super Mutant")
 {
-	std::cout << "Zog zog." << std::endl;
+	std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 
-Peon::Peon(const Peon &copy)
+SuperMutant::SuperMutant(const SuperMutant &copy)
 {
 	*this = copy;
 }
 
-Peon	&Peon::operator=(const Peon &ref)
+SuperMutant	&SuperMutant::operator=(const SuperMutant &ref)
 {
-	Victim::copy(ref);
+	Enemy::copy(ref);
 	return (*this);
 }
 
-void	Peon::getPolymorphed(void) const
+void	SuperMutant::takeDamage(int damage)
 {
-	std::cout << getName() << " has been turned into a pink pony!" << std::endl;
+	Enemy::takeDamage(damage - 3);
 }
 
-Peon::~Peon()
+SuperMutant::~SuperMutant()
 {
-	std::cout << "Bleuark..." << std::endl;
+	std::cout << "Aaargh..." << std::endl;
 }

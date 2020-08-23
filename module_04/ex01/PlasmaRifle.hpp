@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sorcerer.hpp                                       :+:      :+:    :+:   */
+/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 15:33:36 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/23 14:41:21 by jhur             ###   ########.fr       */
+/*   Created: 2020/08/23 15:45:53 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/23 18:13:02 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORCERER_HPP
-# define SORCERER_HPP
+#ifndef PLASMARIFLE_HPP
+# define PLASMARIFLE_HPP
 #include <iostream>
 #include <string>
-#include "Victim.hpp"
-class Sorcerer
-{
-	private:
-		std::string _name;
-		std::string _title;
-	public:
-		Sorcerer();
-		Sorcerer(std::string name, std::string title);
-		Sorcerer(const Sorcerer &copy);
-		Sorcerer	&operator=(const Sorcerer &ref);
-		std::string	introducing(void) const;
-		void		polymorph(Victim const &victim) const;
-		~Sorcerer();
-};
+#include "AWeapon.hpp"
 
-std::ostream &operator<<(std::ostream &out, Sorcerer const &sorcerer);
+class	PlasmaRifle : public AWeapon
+{
+	public:
+		PlasmaRifle();
+		PlasmaRifle(const PlasmaRifle &copy);
+		~PlasmaRifle();
+		AWeapon	&operator=(const AWeapon &ref);
+		void	attack(void) const;
+		PlasmaRifle	&operator=(const PlasmaRifle &ref);
+};
 
 #endif

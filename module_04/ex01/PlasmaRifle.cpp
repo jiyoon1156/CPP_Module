@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   PlasmaRifle.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/23 14:11:34 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/23 14:48:23 by jhur             ###   ########.fr       */
+/*   Created: 2020/08/23 15:45:44 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/23 18:54:18 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
-#include <iostream>
-#include <string>
-#include "Victim.hpp"
+#include "PlasmaRifle.hpp"
 
-class	Peon : public Victim
+PlasmaRifle::PlasmaRifle()
+: AWeapon("Plasma Rifle", 5, 21)
+{}
+
+PlasmaRifle::PlasmaRifle(const PlasmaRifle &copy)
 {
-	public:
-		Peon();
-		Peon(std::string name);
-		Peon(const Peon &copy);
-		Peon &operator=(const Peon &ref);
-		void	introducing(void);
-		void	getPolymorphed(void) const;
-		~Peon();
-};
+	*this = copy;
+}
 
-#endif
+PlasmaRifle	&PlasmaRifle::operator=(const PlasmaRifle &ref)
+{
+	AWeapon::copy(ref);
+	return (*this);
+}
+
+void	PlasmaRifle::attack(void) const
+{
+	std::cout <<  "* piouuu piouuu piouuu *" << std::endl;
+}
+
+PlasmaRifle::~PlasmaRifle()
+{}

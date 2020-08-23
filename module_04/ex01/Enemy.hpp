@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sorcerer.hpp                                       :+:      :+:    :+:   */
+/*   Enemy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 15:33:36 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/23 14:41:21 by jhur             ###   ########.fr       */
+/*   Created: 2020/08/23 16:01:37 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/23 18:19:24 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORCERER_HPP
-# define SORCERER_HPP
+#ifndef ENEMY_HPP
+# define ENEMY_HPP
+
 #include <iostream>
 #include <string>
-#include "Victim.hpp"
-class Sorcerer
+
+class Enemy
 {
 	private:
-		std::string _name;
-		std::string _title;
+		int	_hp;
+		std::string _type;
 	public:
-		Sorcerer();
-		Sorcerer(std::string name, std::string title);
-		Sorcerer(const Sorcerer &copy);
-		Sorcerer	&operator=(const Sorcerer &ref);
-		std::string	introducing(void) const;
-		void		polymorph(Victim const &victim) const;
-		~Sorcerer();
+		Enemy();
+		Enemy(int hp, std::string const &type);
+		Enemy(const Enemy &copy);
+		Enemy			&operator=(const Enemy &ref);
+		virtual ~Enemy();
+		std::string 	getType(void) const;
+		int				getHP(void)	const;
+		virtual	void	takeDamage(int damage);
+		void			copy(Enemy const &ref);
 };
-
-std::ostream &operator<<(std::ostream &out, Sorcerer const &sorcerer);
 
 #endif

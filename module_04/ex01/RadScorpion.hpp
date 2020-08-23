@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sorcerer.hpp                                       :+:      :+:    :+:   */
+/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 15:33:36 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/23 14:41:21 by jhur             ###   ########.fr       */
+/*   Created: 2020/08/23 16:39:28 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/23 18:21:46 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORCERER_HPP
-# define SORCERER_HPP
+#ifndef RADSCORPION_HPP
+# define RADSCORPION_HPP
 #include <iostream>
 #include <string>
-#include "Victim.hpp"
-class Sorcerer
+#include "Enemy.hpp"
+
+class	RadScorpion : public Enemy
 {
-	private:
-		std::string _name;
-		std::string _title;
 	public:
-		Sorcerer();
-		Sorcerer(std::string name, std::string title);
-		Sorcerer(const Sorcerer &copy);
-		Sorcerer	&operator=(const Sorcerer &ref);
-		std::string	introducing(void) const;
-		void		polymorph(Victim const &victim) const;
-		~Sorcerer();
+		RadScorpion();
+		RadScorpion(const RadScorpion &copy);
+		~RadScorpion();
+		RadScorpion	&operator=(const RadScorpion &ref);
+		void	takeDamage(int damage);
 };
-
-std::ostream &operator<<(std::ostream &out, Sorcerer const &sorcerer);
-
 #endif

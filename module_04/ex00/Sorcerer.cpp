@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 15:33:25 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/21 17:30:37 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/23 15:06:33 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Sorcerer::Sorcerer(std::string name, std::string title)
 {
 	this->_name = name;
 	this->_title = title;
+	std::cout << this->_name << ", " << this->_title << ", " << "is born!" << std::endl;
 }
 
 Sorcerer::Sorcerer(const Sorcerer &copy)
@@ -33,20 +34,25 @@ Sorcerer	&Sorcerer::operator=(const Sorcerer &ref)
 	return (*this);
 }
 
-void	Sorcerer::birth(void)
+std::string	Sorcerer::introducing(void) const
 {
-	std::cout << this->_name << ", " << this->_title << ", " << "is born!" << std::endl;
+	std::string intro;
+
+	intro = "I am " + this->_name + ", " + this->_title + ", " + "and I like ponies!" + '\n';
+	return (intro);
 }
 
-void	Sorcerer::death(void)
+void		Sorcerer::polymorph(Victim const &victim) const
 {
-	std::cout << this->_name << ", " << this->_title << ", " << "is dead. Consequences will never be the same!" << std::endl;
+	victim.getPolymorphed();
 }
 
-void	Sorcerer::introducing(void)
+std::ostream &operator<<(std::ostream &out, Sorcerer const &sorcerer)
 {
-	std::cout << "I am " << this->_name << ", " << this->_title << ", " << "and I like ponies!" << std::endl;
+	return (out << sorcerer.introducing());
 }
 
 Sorcerer::~Sorcerer()
-{}
+{
+	std::cout << this->_name << ", " << this->_title << ", " << "is dead. Consequences will never be the same!" << std::endl;
+}

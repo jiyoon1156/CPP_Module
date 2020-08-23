@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sorcerer.hpp                                       :+:      :+:    :+:   */
+/*   AWeapon.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 15:33:36 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/23 14:41:21 by jhur             ###   ########.fr       */
+/*   Created: 2020/08/23 15:31:43 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/23 18:23:00 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORCERER_HPP
-# define SORCERER_HPP
+#ifndef AWEAPON_HPP
+# define AWEAPON_HPP
 #include <iostream>
 #include <string>
-#include "Victim.hpp"
-class Sorcerer
+
+class AWeapon
 {
 	private:
 		std::string _name;
-		std::string _title;
+		int			_apcost;
+		int			_damage;
 	public:
-		Sorcerer();
-		Sorcerer(std::string name, std::string title);
-		Sorcerer(const Sorcerer &copy);
-		Sorcerer	&operator=(const Sorcerer &ref);
-		std::string	introducing(void) const;
-		void		polymorph(Victim const &victim) const;
-		~Sorcerer();
+		AWeapon();
+		AWeapon(std::string const & name, int apcost, int damage);
+		AWeapon(const AWeapon &copy);
+		AWeapon			&operator=(const AWeapon &ref);
+		virtual	~AWeapon();
+		std::string 	getName(void) const;
+		int 			getAPCost(void) const;
+		int 			getDamage(void) const;
+		virtual	void	attack(void) const = 0;
+		void			copy(AWeapon const &ref);
 };
-
-std::ostream &operator<<(std::ostream &out, Sorcerer const &sorcerer);
 
 #endif

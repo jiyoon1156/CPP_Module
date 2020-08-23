@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sorcerer.hpp                                       :+:      :+:    :+:   */
+/*   SuperMutant.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/21 15:33:36 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/23 14:41:21 by jhur             ###   ########.fr       */
+/*   Created: 2020/08/23 16:29:23 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/23 18:21:41 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORCERER_HPP
-# define SORCERER_HPP
+#ifndef SUPERMUTANT_HPP
+# define SUPERMUTANT_HPP
 #include <iostream>
 #include <string>
-#include "Victim.hpp"
-class Sorcerer
-{
-	private:
-		std::string _name;
-		std::string _title;
-	public:
-		Sorcerer();
-		Sorcerer(std::string name, std::string title);
-		Sorcerer(const Sorcerer &copy);
-		Sorcerer	&operator=(const Sorcerer &ref);
-		std::string	introducing(void) const;
-		void		polymorph(Victim const &victim) const;
-		~Sorcerer();
-};
+#include "Enemy.hpp"
 
-std::ostream &operator<<(std::ostream &out, Sorcerer const &sorcerer);
+class	SuperMutant : public Enemy
+{
+	public:
+		SuperMutant();
+		SuperMutant(const SuperMutant &copy);
+		~SuperMutant();
+		SuperMutant	&operator=(const SuperMutant &ref);
+		void	takeDamage(int damage);
+};
 
 #endif

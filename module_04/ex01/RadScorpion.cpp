@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.cpp                                           :+:      :+:    :+:   */
+/*   RadScorpion.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/23 14:11:31 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/23 15:07:45 by jhur             ###   ########.fr       */
+/*   Created: 2020/08/23 16:39:25 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/23 18:47:15 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "RadScorpion.hpp"
 
-Peon::Peon()
-{}
-
-Peon::Peon(std::string name) : Victim(name)
+RadScorpion::RadScorpion()
+: Enemy(80, "RadScorpion")
 {
-	std::cout << "Zog zog." << std::endl;
+	std::cout << "* click click click *" << std::endl;
 }
 
-Peon::Peon(const Peon &copy)
+RadScorpion::RadScorpion(const RadScorpion &copy)
 {
 	*this = copy;
 }
 
-Peon	&Peon::operator=(const Peon &ref)
+RadScorpion	&RadScorpion::operator=(const RadScorpion &ref)
 {
-	Victim::copy(ref);
+	Enemy::copy(ref);
 	return (*this);
 }
 
-void	Peon::getPolymorphed(void) const
+void	RadScorpion::takeDamage(int damage)
 {
-	std::cout << getName() << " has been turned into a pink pony!" << std::endl;
+	Enemy::takeDamage(damage - 3);
 }
 
-Peon::~Peon()
+RadScorpion::~RadScorpion()
 {
-	std::cout << "Bleuark..." << std::endl;
+	std::cout <<  "* SPROTCH *" << std::endl;
 }

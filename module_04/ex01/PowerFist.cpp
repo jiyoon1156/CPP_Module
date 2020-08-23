@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   PowerFist.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/23 14:11:34 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/23 14:48:23 by jhur             ###   ########.fr       */
+/*   Created: 2020/08/23 15:59:15 by jhur              #+#    #+#             */
+/*   Updated: 2020/08/23 18:53:08 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
-#include <iostream>
-#include <string>
-#include "Victim.hpp"
+#include "PowerFist.hpp"
 
-class	Peon : public Victim
+PowerFist::PowerFist()
+: AWeapon("Power Fist", 8, 50)
+{}
+
+PowerFist::PowerFist(const PowerFist &copy)
 {
-	public:
-		Peon();
-		Peon(std::string name);
-		Peon(const Peon &copy);
-		Peon &operator=(const Peon &ref);
-		void	introducing(void);
-		void	getPolymorphed(void) const;
-		~Peon();
-};
+	*this = copy;
+}
 
-#endif
+PowerFist	&PowerFist::operator=(const PowerFist &ref)
+{
+	AWeapon::copy(ref);
+	return (*this);
+}
+
+void	PowerFist::attack(void) const
+{
+	std::cout <<  "* pschhh... SBAM! *" << std::endl;
+}
+
+PowerFist::~PowerFist()
+{}
