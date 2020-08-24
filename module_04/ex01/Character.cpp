@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/23 16:48:26 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/23 18:53:17 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/24 12:35:09 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void		Character::attack(Enemy *enemy)
 		return ;
 	phrase = this->_name + " attacks " + enemy->getType() + " with a " + this->_weapon->getName();
 	std::cout << phrase << std::endl;
-	// std::cout << "*****" << this->_weapon->getAPCost() << std::endl;
 	this->_ap -= this->_weapon->getAPCost();
 	weapon_damage = this->_weapon->getDamage();
 	enemy->takeDamage(weapon_damage);
