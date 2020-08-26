@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 20:01:27 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/24 21:14:56 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/25 12:52:44 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Character : public ICharacter
 		int			_equipped;
 	public:
 		Character();
-		Character(std::string name);
+		Character(std::string const &name);
 		~Character();
 		Character(const Character &copy);
 		Character &operator=(const Character &ref);

@@ -6,16 +6,16 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 20:14:01 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/24 20:16:10 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/25 16:09:29 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("Cure"){}
+Cure::Cure() : AMateria("cure"){}
 Cure::~Cure(){}
 
-Cure::Cure(const Cure& copy) : AMateria("Cure")
+Cure::Cure(const Cure& copy) : AMateria("cure")
 {
 	*this = copy;
 }
@@ -34,5 +34,6 @@ void		Cure::use(ICharacter& target)
 
 AMateria*	Cure::clone() const
 {
+	// Cure *cpy = new Cure(*this);
 	return (new Cure);
 }

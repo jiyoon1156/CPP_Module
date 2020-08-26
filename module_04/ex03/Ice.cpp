@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 19:51:14 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/24 20:15:31 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/25 16:09:40 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void		Ice::use(ICharacter& target)
 
 AMateria*	Ice::clone() const
 {
+	// Ice *cpy = new Ice(*this);
 	return (new Ice);
 }

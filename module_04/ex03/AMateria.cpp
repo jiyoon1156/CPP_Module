@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 18:15:42 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/24 18:34:52 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/25 12:45:51 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ unsigned int		AMateria::getXP() const
 
 void				AMateria::use(ICharacter& target)
 {
+	(void)target;
 	this->_xp += 10;
 }

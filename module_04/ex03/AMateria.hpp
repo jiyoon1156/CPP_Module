@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 18:15:50 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/24 19:53:42 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/25 12:50:39 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define AMATERIA_HPP
 #include <iostream>
 #include <string>
+class AMateria;
 #include "ICharacter.hpp"
 
 class AMateria
