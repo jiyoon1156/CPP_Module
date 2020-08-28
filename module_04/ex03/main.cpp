@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 20:19:07 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/28 09:59:55 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/28 10:08:42 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int main()
 	you->equip(nullptr);
 
 	ICharacter* abob = new Character("abob");
-	you->equip(first);
 	std::cout << "materia exp: " << first->getXP() << std::endl;
 	std::cout << "aaaaaaaaaaaaaaa" << std::endl;
 	you->use(-1, *abob);
@@ -80,10 +79,10 @@ int main()
 	you->unequip(0);
 	std::cout << "materia exp: " << first->getXP() << std::endl;
 	you->use(0, *abob);
-	you->use(2, *abob);
 	std::cout << "materia exp: " << first->getXP() << std::endl;
+	you->use(3, *abob);
 	you->unequip(-1);
-
+	you->equip(first);
 
 	delete abob;
 	delete you;
