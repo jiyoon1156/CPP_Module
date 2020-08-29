@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/28 14:42:52 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/29 11:29:41 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/29 15:40:21 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-#include <exception>
 #include <stdexcept>
-#include <cmath>
-#include <ctype.h>
 #include <iomanip>
 
 class	Convert
@@ -31,7 +28,6 @@ class	Convert
 		~Convert();
 		Convert(const Convert &copy);
 		Convert &operator=(const Convert &ref);
-		std::exception ImpossibleException() const;
 		void	toInt();
 		void	toChar();
 		void	toFloat();
