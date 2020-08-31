@@ -6,63 +6,60 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 14:50:33 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/31 14:50:35 by jhur             ###   ########.fr       */
+/*   Updated: 2020/08/31 16:44:17 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-template <class T>
-void print (Array<T> &arr)
-{
-	try
-	{
-		for (unsigned int i = 0; i < arr.size() + 1; i++)
-			std::cout << (arr[i]) << std::endl;
-	}
-	catch(std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
-
 int main()
 {
-	std::cout << "\n===================int test=====================" << std::endl;
+	std::cout << "\n===================int=====================" << std::endl;
 	Array<int> test(10);
 	for(int i = 0; i < 10; i++)
+	{
 		test[i] = i;
-	print(test);
-
-	std::cout << "\n===================char test=====================" << std::endl;
+		std::cout << test[i] << " ";
+	}
+	std::cout << "\n===================char=====================" << std::endl;
 	Array<char> ch(10);
 	for (int i = 0; i < 10; i++)
+	{
 		ch[i] = 'a' + i;
-	print(ch);
-
-	std::cout << "\n====================copy test===================" << std::endl;
+		std::cout << ch[i] << " ";
+	}
+	std::cout << "\n================copy constructor===================" << std::endl;
 	Array<int> test2(test);
 	std::cout << "==== test2 ====" << std::endl;
-	print(test2);
+	for(int i = 0; i < 10; i++)
+	{
+		test2[i] = i;
+		std::cout << test2[i] << " ";
+	}
 	test2[0] = 100;
-	std::cout << "==== test2[0] = 100 ====" << std::endl;
-	print(test2);
-	std::cout << "==== test ====" << std::endl;
-	print(test);
+	std::cout << "\n===============" << std::endl;
+	for(int i = 1; i < 10; i++)
+		test2[i] = i;
+	for(int i = 0; i < 10; i++)
+		std::cout << test2[i] << " ";
 
-	std::cout << "\n====================assign test===================" << std::endl;
+	std::cout << "\n====================assignation====================" << std::endl;
 	Array<int> test3;
 	test3 = test2;
 	std::cout << "==== test3 ====" << std::endl;
-	print(test3);
-	std::cout << "==== test3[0] = 10000 ====" << std::endl;
+	for(int i = 0; i < 10; i++)
+	{
+		test3[i] = i;
+		std::cout << test3[i] << " ";
+	}
+	std::cout << "\n===============" << std::endl;
 	test3[0] = 10000;
-	print(test3);
-	std::cout << "==== test2 ====" << std::endl;
-	print(test2);
+	for(int i = 1; i < 10; i++)
+		test3[i] = i;
+	for(int i = 0; i < 10; i++)
+		std::cout << test3[i] << " ";
 
-
-	std::cout << "\n==================== default constructor try-catch===============" << std::endl;
+	std::cout << "\n==================== default constructor ===============" << std::endl;
 	Array<int> test4;
 	try
 	{
