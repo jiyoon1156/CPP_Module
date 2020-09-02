@@ -6,28 +6,43 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 11:42:12 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/31 11:54:13 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/02 16:02:17 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
+/*
+class
+Awesome {
+	public:
+		Awesome( int n ) : _n( n ) {}
+		bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
+		bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
+		bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
+		bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
+		bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
+		bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
+	private:
+		int _n;
+};
+*/
 template< class T >
 void swap( T& a, T& b )
 {
-	T tmp = a;
+	T tmp(a); // T tmp = a;
 	a = b;
 	b = tmp;
 }
 
 template< class T >
-const T& min( const T& a, const T& b )
+const T& min( T& a, T& b )
 {
 	return (b < a)? b : a;
 }
 
 template< class T >
-const T& max( const T& a, const T& b )
+const T& max( T& a, T& b )
 {
 	return (a < b)? b : a;
 }
@@ -49,6 +64,22 @@ int main( void )
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min(c, d) = " << ::min( c, d ) << std::endl;
 	std::cout << "max(c, d) = " << ::max( c, d ) << std::endl;
+	/*
+	std::cout << "===============Awesome Test====================" << std::endl;
 
+	Awesome aa(2);
+	Awesome bb(3);
+	Awesome ret(0);
+
+	::swap(aa, bb);
+	if (aa > bb)
+		std::cout << "its swapped" << std::endl;
+	ret = ::min(aa, bb);
+	if (ret == bb)
+		std::cout << "min worked" << std::endl;
+	ret = ::max(aa, bb);
+	if (ret == aa)
+		std::cout << "max worked" << std::endl;
+	*/
 	return 0;
 }
