@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 13:59:58 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/31 16:17:00 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/02 16:26:56 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Array
 template< class T >
 Array<T>::Array(): _numElm(0)
 {
-	this->_array = new T[_numElm];
+	this->_array = new T[0];
 }
 
 template< class T >
@@ -55,19 +55,23 @@ Array<T>::Array(unsigned int n): _numElm(n)
 template< class T >
 Array<T>::Array(const Array &copy)
 {
+	this->_numElm = 0;
+	this->_array = nullptr;
 	*this = copy;
 }
 
 template< class T >
 Array<T>::~Array()
 {
-	delete this->_array;
+	if (this->_array)
+		delete this->_array;
 }
 
 template< class T >
 Array<T>& Array<T>::operator=(const Array &ref)
 {
-	delete this->_array;
+	if (this->_array)
+		delete this->_array;
 	this->_numElm = ref._numElm;
 	this->_array = new T[this->_numElm];
 	for(unsigned int i = 0; i < this->_numElm; i++)
