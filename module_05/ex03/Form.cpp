@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:14:28 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/27 17:13:28 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/02 22:24:23 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,16 @@ const char* Form::GradeTooHighException::what() const throw()
 const char* Form::GradeTooLowException::what() const throw()
 {
 	return ("Exception from Form: Grade is too low!");
+}
+
+const char* Form::AlreadySignedException::what() const throw()
+{
+	return ("It is already signed");
+}
+
+const char* Form::NeedSignException::what() const throw()
+{
+	return ("Form must be signed first!");
 }
 
 Form::Form(const Form &copy)
@@ -72,7 +82,7 @@ bool			Form::getSigned(void) const
 void		Form::beSigned(Bureaucrat &b)
 {
 	if (this->_signed != 0)
-		std::cout << "It is already signed!" << std::endl;
+		throw Form::AlreadySignedException();
 	else if (b.getGrade() > this->_signGrade)
 		throw Form::GradeTooLowException();
 	else
@@ -82,7 +92,7 @@ void		Form::beSigned(Bureaucrat &b)
 void		Form::execute(Bureaucrat const & executor) const
 {
 	if (this->_signed == 0)
-		std::cout << "Form must be signed first!" << std::endl;
+		throw Form::NeedSignException();
 	if (executor.getGrade() > this->_signGrade)
 		throw Form::GradeTooLowException();
 }

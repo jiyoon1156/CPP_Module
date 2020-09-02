@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:14:28 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/27 14:23:53 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/02 22:30:09 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ const char* Form::GradeTooHighException::what() const throw()
 const char* Form::GradeTooLowException::what() const throw()
 {
 	return ("Exception from Form: Grade is too low!");
+}
+
+const char* Form::AlreadySignedException::what() const throw()
+{
+	return ("It is already signed");
 }
 
 Form::Form(const Form &copy)
@@ -73,7 +78,7 @@ void		Form::beSigned(Bureaucrat &b)
 {
 	if (this->_signed != 0)
 		std::cout << "It is already signed!" << std::endl;
-	if (b.getGrade() > this->_signGrade)
+	else if (b.getGrade() > this->_signGrade)
 		throw Form::GradeTooLowException();
 	else
 		this->_signed = 1;

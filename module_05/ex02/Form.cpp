@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:14:28 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/27 17:13:28 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/02 22:27:57 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,16 @@ const char* Form::GradeTooHighException::what() const throw()
 const char* Form::GradeTooLowException::what() const throw()
 {
 	return ("Exception from Form: Grade is too low!");
+}
+
+const char* Form::AlreadySignedException::what() const throw()
+{
+	return ("It is already signed");
+}
+
+const char* Form::NeedSignException::what() const throw()
+{
+	return ("Form must be signed first!");
 }
 
 Form::Form(const Form &copy)

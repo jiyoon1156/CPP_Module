@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 12:14:37 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/27 14:00:57 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/02 22:30:19 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ class	Form
 				virtual	const char* what() const throw();
 		};
 		class	GradeTooLowException : public std::exception
+		{
+			public:
+				virtual	const char* what() const throw();
+		};
+		class	AlreadySignedException : public std::exception
 		{
 			public:
 				virtual	const char* what() const throw();

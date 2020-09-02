@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/27 15:46:11 by jhur              #+#    #+#             */
-/*   Updated: 2020/08/27 18:57:33 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/02 22:26:40 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,18 @@ int main()
     Form *f1;
     Form *f2;
 
+    Bureaucrat b("jhur", 1);
+
     f0 = intern0.makeForm("robotomy request", "Bender");
+    try
+    {
+        // f0->beSigned(b);
+        f0->execute(b);
+    }
+    catch(std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     std::cout << *f0 << std::endl;
     f1 = intern1.makeForm("presidential request", "intern1");
     std::cout << *f1 << std::endl;
