@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/02 13:43:00 by jhur              #+#    #+#             */
-/*   Updated: 2020/09/03 13:41:09 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/03 15:41:27 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,17 @@ int		Span::shortestSpan(void)
 	if (size <= 1)
 		throw NotEnoughNumException();
 	std::vector<int>::iterator it = this->container.begin();
-	int MinVaule = *it;
-	while (it < container.end())
+	std::vector<int>::iterator itNext = this->container.begin()++;
+	int MinVaule = *itNext++ - *it++;
+	while (itNext < container.end())
 	{
-
+		int tmp = *itNext - *it;
+		if (tmp < MinVaule)
+			MinVaule = tmp;
+		*itNext++;
+		*it++;
 	}
+	return (MinVaule);
 }
 
 int		Span::longestSpan(void)
