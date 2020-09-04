@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 10:29:39 by jhur              #+#    #+#             */
-/*   Updated: 2020/09/04 12:26:40 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/04 12:31:27 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ MutantStack<T> &MutantStack<T>::operator=(const MutantStack &ref)
 }
 
 template<class T>
-MutantStack<T>::iterator MutantStack<T>::begin()
+typename MutantStack<T>::iterator MutantStack<T>::begin()
 {
 	return (this->c.begin());
 }
 
 template<class T>
-MutantStack<T>::iterator MutantStack<T>::end()
+typename MutantStack<T>::iterator MutantStack<T>::end()
 {
 	return (this->c.end());
 }

@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 10:29:51 by jhur              #+#    #+#             */
-/*   Updated: 2020/09/04 11:56:07 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/04 12:38:25 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define MUTANTSTACK_HPP
 #include <iostream>
 #include <stack>
-#include <deque>
 
 template<class T>
 class MutantStack : public std::stack<T>
