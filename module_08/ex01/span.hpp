@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/02 13:33:14 by jhur              #+#    #+#             */
-/*   Updated: 2020/09/03 13:36:54 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/04 10:21:08 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 #include <vector>
 #include <exception>
-#include <stdexcept>
+#include <algorithm>
 
 class	Span
 {
