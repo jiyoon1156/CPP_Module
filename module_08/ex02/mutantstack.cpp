@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 10:29:39 by jhur              #+#    #+#             */
-/*   Updated: 2020/09/04 12:31:27 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/05 10:11:40 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,40 @@ template<class T>
 typename MutantStack<T>::iterator MutantStack<T>::end()
 {
 	return (this->c.end());
+}
+
+template<class T>
+typename MutantStack<T>::const_iterator MutantStack<T>::begin() const
+{
+	return (this->c.begin());
+}
+
+template<class T>
+typename MutantStack<T>::const_iterator MutantStack<T>::end() const
+{
+	return (this->c.end());
+}
+
+template<class T>
+typename MutantStack<T>::reverse_iterator MutantStack<T>::rbegin()
+{
+	return (this->c.rbegin());
+}
+
+template<class T>
+typename MutantStack<T>::reverse_iterator MutantStack<T>::rend()
+{
+	return (this->c.rend());
+}
+
+template<class T>
+typename MutantStack<T>::const_reverse_iterator MutantStack<T>::rbegin() const
+{
+	return (this->c.rbegin());
+}
+
+template<class T>
+typename MutantStack<T>::const_reverse_iterator MutantStack<T>::rend() const
+{
+	return (this->c.rend());
 }
