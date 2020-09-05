@@ -6,7 +6,7 @@
 /*   By: jhur <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/01 22:17:31 by jhur              #+#    #+#             */
-/*   Updated: 2020/09/02 13:19:19 by jhur             ###   ########.fr       */
+/*   Updated: 2020/09/05 12:54:51 by jhur             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 # define EASYFIND_HPP
 # include <iostream>
 # include <vector>
+# include <algorithm>
 
 template<class T>
 int easyfind(std::vector<T> container, int value)
 {
-	std::vector<int>::iterator it = container.begin();
-	while(it < container.end())
-	{
-		if (*it == value)
-			return (*it);
-		it++;
-	}
-	return (-1);
+	std::vector<int>::iterator it;
+	it = find(container.begin(), container.end(), value);
+	if (it == container.end())
+		return(-1);
+	else
+		return (*it);
 }
 
 #endif
